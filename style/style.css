@@ -1,8 +1,22 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f7f5f0;
+  color: #1a1a1a;
+  font-family: "Georgia", serif;
+}
+
 .banner {
+  position: relative;
   width: 100%;
-  height: 60vh;
-  background-image: url(/VinylLounge/assets/images/jazz-vinyl-records-08.webp);
-  background-position: center;
+  height: 65vh;
+  background-color: #231c18;
+  background-image: url("https://images.unsplash.com/photo-1539628399283-a669226744d3?q=80&w=1200");
+  background-position: center 40%;
   background-size: cover;
   background-repeat: no-repeat;
   display: flex;
@@ -11,38 +25,239 @@
   text-align: center;
 }
 
+.banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(35, 28, 24, 0.5), rgba(26, 26, 26, 0.85));
+}
+
 .banner-content {
-  color: white;
-  font-family: Arial, sans-serif;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  position: relative;
+  z-index: 10;
+  color: #f7f5f0;
+  padding: 0 20px;
+}
+
+.banner-content h1 {
+  font-size: 3.5rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+}
+
+.banner-content p {
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #d1c7bd;
+  margin-bottom: 25px;
 }
 
 .banner-button {
-  margin-top: 15px;
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #ff4757;
-  color: white;
+  padding: 12px 30px;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background-color: #8c6d53;
+  color: #f7f5f0;
   border: none;
-  border-radius: 5px;
+  border-radius: 4px;
   cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.banner-button:hover {
+  background-color: #6f533c;
+}
+
+.features {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 60px 40px;
+  background-color: #1a1512;
+  border-bottom: 1px solid #2c221e;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature-item {
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px;
+  border-left: 2px solid #8c6d53;
+}
+
+.feature-number {
+  font-family: "Georgia", serif;
+  font-size: 24px;
+  font-style: italic;
+  color: #8c6d53;
+  line-height: 1;
+}
+
+.feature-text h3 {
+  font-family: "Georgia", serif;
+  font-size: 18px;
+  color: #f7f5f0;
+  margin-bottom: 8px;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+.feature-text p {
+  font-family: "Georgia", serif;
+  font-size: 14px;
+  color: #a6968a;
+  line-height: 1.6;
 }
 
 .catalogo {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 20px;
-  padding: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-auto-rows: 1fr;
+  gap: 30px;
+  padding: 50px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .quadrado {
-  background-color: lightgray;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  height: 230px;
+  position: relative;
+  background-color: #ffffff;
+  border: 1px solid #e6dfd5;
+  border-radius: 6px;
+  overflow: hidden;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: Arial, sans-serif;
+  flex-direction: column;
+  transition:
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.4s;
+}
+
+.quadrado:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(44, 34, 30, 0.12);
+}
+
+.tag-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: #1a1a1a;
+  color: #f7f5f0;
+  padding: 4px 10px;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 3px;
+  z-index: 2;
+}
+
+.produto-img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  filter: sepia(15%) contrast(95%);
+}
+
+.produto-info {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background-color: #ffffff;
+  border-top: 1px solid #f2ece4;
+  flex-grow: 1;
+}
+
+.produto-nome {
+  font-size: 16px;
   font-weight: bold;
+  color: #2c221e;
+}
+
+.produto-artista {
+  font-size: 14px;
+  color: #8c7e74;
+}
+
+.produto-preco {
+  font-size: 15px;
+  font-weight: bold;
+  color: #8c6d53;
+  margin-top: auto;
+}
+
+.footer {
+  background-color: #1a1a1a;
+  color: #f7f5f0;
+  padding: 60px 20px 30px 20px;
+  margin-top: 100px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-bottom: 1px solid #332923;
+  padding-bottom: 30px;
+}
+
+.footer-brand h2 {
+  font-size: 24px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  color: #f7f5f0;
+  margin-bottom: 6px;
+}
+
+.footer-brand p {
+  font-size: 14px;
+  color: #a6968a;
+  font-style: italic;
+}
+
+.footer-info {
+  text-align: right;
+  font-size: 14px;
+  color: #d1c7bd;
+  line-height: 1.8;
+  min-width: 200px;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 12px;
+  color: #736860;
+}
+
+@media (max-width: 768px) {
+  .features {
+    padding: 40px 20px;
+  }
+  .feature-item {
+    border-left: none;
+    border-top: 2px solid #8c6d53;
+    padding-top: 20px;
+  }
+  .footer-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .footer-info {
+    text-align: center;
+    margin-top: 10px;
+  }
 }
