@@ -10,6 +10,71 @@ body {
   font-family: "Georgia", serif;
 }
 
+.main-header {
+  position: fixed; /* MUDOU AQUI: Agora ele acompanha o scroll da página */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100; /* Garante que ele fique sempre por cima de todo o conteúdo */
+
+  /* Efeito Noir elegante: fundo escuro translúcido com desfoque de vidro */
+  background: rgba(26, 26, 26, 0.75);
+  backdrop-filter: blur(
+    8px
+  ); /* Dá um efeito "glassmorphic" premium ao descer */
+  -webkit-backdrop-filter: blur(8px);
+
+  border-bottom: 1px solid rgba(140, 109, 83, 0.15); /* Linha divisória bem sutil em tom marrom */
+  padding: 16px 0; /* Reduzido ligeiramente o padding para não ocupar muito espaço da tela */
+  transition: background 0.3s ease;
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: table; /* Mantém compatibilidade sem flex/grid */
+  width: 100%;
+}
+
+.logo {
+  display: table-cell;
+  vertical-align: middle;
+  font-family: "Georgia", serif;
+  font-size: 20px;
+  letter-spacing: 1px;
+  color: #f7f5f0;
+  text-decoration: none;
+}
+
+.nav-menu {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: right;
+}
+
+.nav-menu a {
+  font-family: "Georgia", serif;
+  font-size: 14px;
+  color: #d1c7bd;
+  text-decoration: none;
+  margin-left: 25px;
+  transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+  color: #f7f5f0; /* Acende o link no hover */
+}
+
+.nav-menu .cart-icon {
+  color: #8c6d53; /* Destaque em marrom quente para o carrinho */
+  font-weight: bold;
+}
+
+.nav-menu .cart-icon:hover {
+  color: #a68467;
+}
+
 .banner {
   position: relative;
   width: 100%;
