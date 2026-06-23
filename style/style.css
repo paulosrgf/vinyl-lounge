@@ -11,21 +11,17 @@ body {
 }
 
 .main-header {
-  position: fixed; /* MUDOU AQUI: Agora ele acompanha o scroll da página */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 100; /* Garante que ele fique sempre por cima de todo o conteúdo */
-
-  /* Efeito Noir elegante: fundo escuro translúcido com desfoque de vidro */
+  z-index: 100;
   background: rgba(26, 26, 26, 0.75);
-  backdrop-filter: blur(
-    8px
-  ); /* Dá um efeito "glassmorphic" premium ao descer */
+  backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 
-  border-bottom: 1px solid rgba(140, 109, 83, 0.15); /* Linha divisória bem sutil em tom marrom */
-  padding: 16px 0; /* Reduzido ligeiramente o padding para não ocupar muito espaço da tela */
+  border-bottom: 1px solid rgba(140, 109, 83, 0.15);
+  padding: 16px 0;
   transition: background 0.3s ease;
 }
 
@@ -33,7 +29,7 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
-  display: table; /* Mantém compatibilidade sem flex/grid */
+  display: table;
   width: 100%;
 }
 
