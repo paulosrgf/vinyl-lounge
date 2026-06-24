@@ -3,7 +3,11 @@
   <head>
     <link rel="stylesheet" href="./style/style.css" />
     <link rel="stylesheet" href="./style/style-pages.css" />
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="./assets/images/favicon.jpg"
+      type="image/jpeg"
+    />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vinyl Lounge - Your Cart</title>
@@ -22,58 +26,136 @@
     </header>
 
     <main class="page-container">
-      <h2 class="section-title">Shopping Cart</h2>
+      <div class="page-heading">
+        <h2 class="section-title">Shopping Cart</h2>
+        <a href="./index.html" class="continue-link">← Continue browsing</a>
+      </div>
 
       <div class="cart-wrapper">
-        <table class="cart-table">
-          <thead>
-            <tr>
-              <th>Product</th>
-              <th>Price</th>
-              <th>Quantity</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="cart-product-cell">
-                <img
-                  src="./assets/images/covers/unlimited-love.jpg"
-                  alt="Unlimited Love"
-                  class="cart-item-img"
+        <div class="cart-items-panel">
+          <!-- Item 1: Unlimited Love -->
+          <div class="cart-item-wrap">
+            <input type="checkbox" id="remove-1" class="remove-toggle" />
+            <div class="cart-item-row">
+              <img
+                src="./assets/images/covers/unlimited-love.jpg"
+                alt="Unlimited Love"
+                class="cart-item-img"
+              />
+              <div class="cart-item-details">
+                <p class="cart-item-title">Unlimited Love</p>
+                <p class="cart-item-subtitle">Red Hot Chili Peppers</p>
+                <span class="cart-item-badge">Special Edition</span>
+              </div>
+              <div class="cart-item-right">
+                <p class="cart-price">$34.99</p>
+                <input
+                  type="number"
+                  class="qty-input"
+                  value="1"
+                  min="1"
+                  max="5"
+                  title="Quantity"
                 />
-                <div>
-                  <p class="cart-item-title">Unlimited Love</p>
-                  <p class="cart-item-subtitle">Red Hot Chili Peppers</p>
-                </div>
-              </td>
-              <td class="cart-price">$34.99</td>
-              <td>1</td>
-              <td><a href="./index.html" class="remove-link">Remove</a></td>
-            </tr>
-          </tbody>
-        </table>
+                <label for="remove-1" class="remove-link">Remove</label>
+              </div>
+            </div>
+            <div class="item-removed-msg">
+              <span>Item removed.</span>
+              <label for="remove-1" class="undo-link">Undo</label>
+            </div>
+          </div>
+
+          <!-- Item 2: Abbey Road -->
+          <div class="cart-item-wrap">
+            <input type="checkbox" id="remove-2" class="remove-toggle" />
+            <div class="cart-item-row">
+              <img
+                src="./assets/images/covers/abbey-road.jpg"
+                alt="Abbey Road"
+                class="cart-item-img"
+              />
+              <div class="cart-item-details">
+                <p class="cart-item-title">Abbey Road</p>
+                <p class="cart-item-subtitle">The Beatles</p>
+              </div>
+              <div class="cart-item-right">
+                <p class="cart-price">$27.99</p>
+                <input
+                  type="number"
+                  class="qty-input"
+                  value="1"
+                  min="1"
+                  max="5"
+                  title="Quantity"
+                />
+                <label for="remove-2" class="remove-link">Remove</label>
+              </div>
+            </div>
+            <div class="item-removed-msg">
+              <span>Item removed.</span>
+              <label for="remove-2" class="undo-link">Undo</label>
+            </div>
+          </div>
+
+          <!-- Item 3: Nevermind -->
+          <div class="cart-item-wrap">
+            <input type="checkbox" id="remove-3" class="remove-toggle" />
+            <div class="cart-item-row">
+              <img
+                src="./assets/images/covers/nevermind.jpg"
+                alt="Nevermind"
+                class="cart-item-img"
+              />
+              <div class="cart-item-details">
+                <p class="cart-item-title">Nevermind</p>
+                <p class="cart-item-subtitle">Nirvana</p>
+              </div>
+              <div class="cart-item-right">
+                <p class="cart-price">$29.99</p>
+                <input
+                  type="number"
+                  class="qty-input"
+                  value="1"
+                  min="1"
+                  max="5"
+                  title="Quantity"
+                />
+                <label for="remove-3" class="remove-link">Remove</label>
+              </div>
+            </div>
+            <div class="item-removed-msg">
+              <span>Item removed.</span>
+              <label for="remove-3" class="undo-link">Undo</label>
+            </div>
+          </div>
+
+          <div class="cart-empty-hint">
+            <p>Free shipping on all orders. Limited stock — grab yours.</p>
+          </div>
+        </div>
 
         <div class="cart-summary">
           <h3>Order Summary</h3>
           <div class="summary-row">
             <span>Subtotal</span>
-            <span>$34.99</span>
+            <span>$92.97</span>
           </div>
           <div class="summary-row">
             <span>Shipping</span>
             <span class="free-shipping">FREE</span>
           </div>
+          <div class="summary-row summary-row--muted">
+            <span>Estimated delivery</span>
+            <span>5–8 business days</span>
+          </div>
+          <div class="summary-divider"></div>
           <div class="summary-total">
             <span>Total</span>
-            <span>$34.99</span>
+            <span>$92.97</span>
           </div>
-          <button
-            class="checkout-button"
-            onclick="alert('Order completed under Noir code standards!')"
-          >
-            Checkout Order
-          </button>
+          <a href="#" class="checkout-button">Checkout Order</a>
+          <p class="checkout-note">Secure checkout. No account required.</p>
         </div>
       </div>
     </main>

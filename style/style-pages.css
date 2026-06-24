@@ -1,50 +1,63 @@
+/* ==========================================================================
+   INNER PAGE BASE
+   ========================================================================== */
 .inner-page {
-  padding-top: 80px; /* Compensa o header fixo */
+  padding-top: 80px;
 }
 
 .page-container {
   max-width: 1200px;
-  margin: 40px auto;
+  margin: 50px auto;
   padding: 0 20px;
 }
 
 .section-title {
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 400;
   color: #2c221e;
-  margin-bottom: 30px;
   letter-spacing: 1px;
 }
 
 /* ==========================================================================
-   COLLECTIONS PAGE (Search & Genres)
+   COLLECTIONS PAGE — Search
    ========================================================================== */
 .search-section {
   background-color: #ffffff;
-  padding: 30px;
+  padding: 32px;
   border-radius: 6px;
   border: 1px solid #e6dfd5;
-  margin-bottom: 40px;
+  margin-bottom: 44px;
+}
+
+.search-section .section-title {
+  margin-bottom: 20px;
 }
 
 .search-bar {
   display: flex;
-  gap: 15px;
-  margin-bottom: 10px;
+  gap: 12px;
+  margin-bottom: 12px;
 }
 
 .search-bar input {
   flex: 1;
-  padding: 12px;
+  padding: 13px 16px;
   border: 1px solid #e6dfd5;
   background-color: #fdfbf7;
   font-family: "Georgia", serif;
   font-size: 14px;
   border-radius: 4px;
+  color: #2c221e;
+  transition: border-color 0.2s;
+}
+
+.search-bar input:focus {
+  outline: none;
+  border-color: #8c6d53;
 }
 
 .search-button {
-  padding: 0 25px;
+  padding: 0 28px;
   background-color: #1a1a1a;
   color: #f7f5f0;
   border: none;
@@ -52,122 +65,327 @@
   font-size: 14px;
   border-radius: 4px;
   cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: background-color 0.2s;
+}
+
+.search-button:hover {
+  background-color: #8c6d53;
 }
 
 .search-hint {
   font-size: 13px;
-  color: #8c7e74;
+  color: #a6968a;
+  font-style: italic;
 }
 
+/* ==========================================================================
+   COLLECTIONS PAGE — Genre Cards
+   ========================================================================== */
 .genres-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 25px;
+  gap: 24px;
 }
 
 .genre-card {
   position: relative;
-  background-color: #2c221e;
-  padding: 40px 20px;
-  text-align: center;
+  padding: 44px 28px 36px;
   border-radius: 6px;
   overflow: hidden;
   cursor: pointer;
+  min-height: 220px;
+  display: flex;
+  align-items: flex-end;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.genre-card:hover {
+  transform: translateY(-6px);
+}
+
+/* Vinyl disc decoration — slides in on hover */
+.genre-vinyl-disc {
+  position: absolute;
+  right: -60px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.08);
+  background: repeating-radial-gradient(
+    circle at center,
+    rgba(0, 0, 0, 0.5) 0px,
+    rgba(0, 0, 0, 0.5) 3px,
+    rgba(255, 255, 255, 0.03) 3px,
+    rgba(255, 255, 255, 0.03) 6px
+  );
+  transition:
+    right 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.4s;
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.genre-card:hover .genre-vinyl-disc {
+  right: -30px;
+  opacity: 0.7;
+}
+
+/* Unique color palettes per genre */
+.genre-rock {
+  background: linear-gradient(135deg, #1a0f08 0%, #3d1f0e 60%, #5c2e10 100%);
+  border: 1px solid #5c2e10;
+}
+
+.genre-jazz {
+  background: linear-gradient(135deg, #080d1a 0%, #0e183d 60%, #10205c 100%);
+  border: 1px solid #10205c;
+}
+
+.genre-grunge {
+  background: linear-gradient(135deg, #0d1a08 0%, #1a3d0e 60%, #1e4f10 100%);
+  border: 1px solid #1e4f10;
+}
+
+.genre-special {
+  background: linear-gradient(135deg, #1a1208 0%, #3d300e 60%, #5c4510 100%);
+  border: 1px solid #5c4510;
+}
+
+/* Shimmer overlay on hover */
+.genre-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.04) 50%,
+    transparent 70%
+  );
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.genre-card:hover .genre-overlay {
+  opacity: 1;
+}
+
+.genre-content {
+  position: relative;
+  z-index: 2;
+}
+
+.genre-label {
+  display: block;
+  font-family: "Georgia", serif;
+  font-size: 11px;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.35);
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.genre-rock .genre-label {
+  color: rgba(200, 130, 80, 0.6);
+}
+.genre-jazz .genre-label {
+  color: rgba(100, 140, 210, 0.6);
+}
+.genre-grunge .genre-label {
+  color: rgba(100, 180, 100, 0.6);
+}
+.genre-special .genre-label {
+  color: rgba(200, 175, 80, 0.6);
 }
 
 .genre-card h3 {
   color: #f7f5f0;
-  font-size: 20px;
+  font-size: 19px;
   font-weight: 400;
-  margin-bottom: 8px;
-  position: relative;
-  z-index: 2;
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
 }
 
 .genre-card p {
-  color: #d1c7bd;
+  color: #b8ada6;
   font-size: 13px;
   font-style: italic;
-  position: relative;
-  z-index: 2;
+  margin-bottom: 14px;
+  line-height: 1.5;
+}
+
+.genre-count {
+  display: inline-block;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: rgba(255, 255, 255, 0.3);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 10px;
 }
 
 /* ==========================================================================
-   CART PAGE (Shopping Cart Table & Summary)
+   CART PAGE
    ========================================================================== */
+.page-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.continue-link {
+  font-size: 13px;
+  color: #8c6d53;
+  text-decoration: none;
+  font-style: italic;
+  transition: color 0.2s;
+}
+
+.continue-link:hover {
+  color: #6f533c;
+}
+
 .cart-wrapper {
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
+  gap: 28px;
+  align-items: flex-start;
 }
 
-.cart-table {
+/* --- Items panel (replaces the table) --- */
+.cart-items-panel {
   flex: 2;
-  min-width: 600px;
-  border-collapse: collapse;
+  min-width: 300px;
   background-color: #ffffff;
+  border: 1px solid #e6dfd5;
   border-radius: 6px;
   overflow: hidden;
-  border: 1px solid #e6dfd5;
 }
 
-.cart-table th,
-.cart-table td {
-  padding: 20px;
-  text-align: left;
-}
-
-.cart-table th {
-  background-color: #1a1a1a;
-  color: #f7f5f0;
-  font-weight: 400;
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.cart-table tbody tr {
+.cart-item-row {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px;
   border-bottom: 1px solid #f2ece4;
 }
 
-.cart-product-cell {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
 .cart-item-img {
-  width: 70px;
-  height: 70px;
+  width: 80px;
+  height: 80px;
   object-fit: cover;
   border-radius: 4px;
+  flex-shrink: 0;
+  filter: sepia(10%) contrast(95%);
+}
+
+.cart-item-details {
+  flex: 1;
 }
 
 .cart-item-title {
+  font-size: 16px;
   font-weight: bold;
   color: #2c221e;
+  margin-bottom: 4px;
 }
 
 .cart-item-subtitle {
   font-size: 13px;
   color: #8c7e74;
+  margin-bottom: 8px;
+}
+
+.cart-item-badge {
+  display: inline-block;
+  background-color: #1a1a1a;
+  color: #f7f5f0;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 3px 8px;
+  border-radius: 3px;
+}
+
+.cart-item-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.cart-price {
+  font-size: 16px;
+  font-weight: bold;
+  color: #8c6d53;
+}
+
+.cart-qty {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid #e6dfd5;
+  border-radius: 4px;
+  padding: 4px 10px;
+  font-size: 14px;
+  color: #2c221e;
+}
+
+.qty-btn {
+  cursor: pointer;
+  color: #8c6d53;
+  font-size: 16px;
+  line-height: 1;
+  user-select: none;
+  transition: color 0.2s;
+}
+
+.qty-btn:hover {
+  color: #1a1a1a;
+}
+
+.qty-value {
+  min-width: 16px;
+  text-align: center;
 }
 
 .remove-link {
-  color: #cc4444;
-  font-size: 13px;
+  color: #b06060;
+  font-size: 12px;
   text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: color 0.2s;
 }
 
 .remove-link:hover {
+  color: #8c3030;
   text-decoration: underline;
 }
 
+.cart-empty-hint {
+  padding: 14px 24px;
+  background-color: #fdfbf7;
+}
+
+.cart-empty-hint p {
+  font-size: 12px;
+  color: #a6968a;
+  font-style: italic;
+}
+
+/* --- Summary panel --- */
 .cart-summary {
   flex: 1;
-  min-width: 300px;
+  min-width: 260px;
   background-color: #ffffff;
-  padding: 30px;
+  padding: 28px;
   border-radius: 6px;
   border: 1px solid #e6dfd5;
   height: fit-content;
@@ -175,49 +393,225 @@
 
 .cart-summary h3 {
   font-size: 18px;
-  margin-bottom: 20px;
-  border-bottom: 1px solid #f2ece4;
-  padding-bottom: 10px;
+  font-weight: 400;
+  color: #1a1a1a;
+  margin-bottom: 22px;
+  letter-spacing: 0.5px;
 }
 
 .summary-row {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 15px;
+  margin-bottom: 14px;
   font-size: 14px;
   color: #59514a;
 }
 
+.summary-row--muted {
+  font-size: 12px;
+  color: #a6968a;
+  font-style: italic;
+}
+
 .free-shipping {
-  color: #44aa44;
+  color: #5a8c5a;
   font-weight: bold;
+  font-style: normal;
+  font-size: 13px;
+}
+
+.summary-divider {
+  border: none;
+  border-top: 1px dashed #e6dfd5;
+  margin: 18px 0;
 }
 
 .summary-total {
   display: flex;
   justify-content: space-between;
-  margin-top: 20px;
-  padding-top: 15px;
-  border-top: 1px dashed #e6dfd5;
   font-size: 18px;
   font-weight: bold;
   color: #1a1a1a;
+  margin-bottom: 22px;
 }
 
 .checkout-button {
   width: 100%;
-  padding: 14px;
+  padding: 15px;
   background-color: #8c6d53;
   color: #f7f5f0;
   border: none;
   font-family: "Georgia", serif;
   font-size: 15px;
   border-radius: 4px;
-  margin-top: 25px;
   cursor: pointer;
-  transition: background-color 0.2s;
+  letter-spacing: 0.5px;
+  transition:
+    background-color 0.2s,
+    transform 0.15s;
 }
 
 .checkout-button:hover {
   background-color: #6f533c;
+  transform: translateY(-1px);
+}
+
+.checkout-button:active {
+  transform: translateY(0);
+}
+
+.checkout-note {
+  text-align: center;
+  margin-top: 14px;
+  font-size: 11px;
+  color: #a6968a;
+  font-style: italic;
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+@media (max-width: 768px) {
+  .genres-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cart-wrapper {
+    flex-direction: column;
+  }
+
+  .cart-items-panel {
+    min-width: unset;
+  }
+
+  .cart-item-row {
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+
+  .cart-item-right {
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .cart-summary {
+    min-width: unset;
+    width: 100%;
+  }
+
+  .page-heading {
+    flex-direction: column;
+    gap: 6px;
+  }
+}
+
+/* ==========================================================================
+   CART — REMOVE ITEM (checkbox hack) & QTY INPUT
+   ========================================================================== */
+
+/* Esconde o checkbox real */
+.remove-toggle {
+  display: none;
+}
+
+/* O item-wrap controla visibilidade */
+.cart-item-wrap {
+  position: relative;
+}
+
+/* Mensagem de "item removido" — oculta por padrão */
+.item-removed-msg {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  background-color: #fdfbf7;
+  border-bottom: 1px solid #f2ece4;
+  font-size: 13px;
+  color: #8c7e74;
+  font-style: italic;
+}
+
+.undo-link {
+  font-style: normal;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #8c6d53;
+  cursor: pointer;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.undo-link:hover {
+  color: #6f533c;
+}
+
+/* Quando o checkbox está marcado: esconde a row, mostra a mensagem */
+.remove-toggle:checked + .cart-item-row {
+  display: none;
+}
+
+.remove-toggle:checked ~ .item-removed-msg {
+  display: flex;
+}
+
+/* Campo de quantidade nativo */
+.qty-input {
+  width: 68px;
+  padding: 6px 8px;
+  border: 1px solid #e6dfd5;
+  border-radius: 4px;
+  background-color: #fdfbf7;
+  font-family: "Georgia", serif;
+  font-size: 14px;
+  color: #2c221e;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.2s;
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+
+.qty-input:focus {
+  outline: none;
+  border-color: #8c6d53;
+}
+
+/* Estiliza as setinhas do number input no webkit */
+.qty-input::-webkit-outer-spin-button,
+.qty-input::-webkit-inner-spin-button {
+  opacity: 1;
+  cursor: pointer;
+}
+
+/* Botão de checkout como <a> */
+a.checkout-button {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+  padding: 15px;
+  background-color: #8c6d53;
+  color: #f7f5f0;
+  font-family: "Georgia", serif;
+  font-size: 15px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+  transition:
+    background-color 0.2s,
+    transform 0.15s;
+  box-sizing: border-box;
+}
+
+a.checkout-button:hover {
+  background-color: #6f533c;
+  transform: translateY(-1px);
+}
+
+/* Género cards clicáveis como <a> */
+a.genre-card {
+  text-decoration: none;
 }
