@@ -1,0 +1,8 @@
+services:
+  web:
+    build: .
+    image: vinyl-lounge-app
+    container_name: vinyl_lounge_container
+    ports:
+      - "8080:80"
+    restart: unless-stopped
