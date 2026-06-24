@@ -2,6 +2,11 @@
 <html lang="en">
   <head>
     <link rel="stylesheet" href="./style/style.css" />
+    <link
+      rel="shortcut icon"
+      href="./assets/images/favicon.jpg"
+      type="image/jpeg"
+    />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vinyl Lounge</title>
@@ -10,12 +15,11 @@
   <body>
     <header class="main-header">
       <div class="header-container">
-        <a href="#" class="logo">Vinyl Lounge</a>
+        <a href="./index.html" class="logo">Vinyl Lounge</a>
         <nav class="nav-menu">
-          <a href="#">Collection</a>
-          <a href="#">Lounge Cafe</a>
-          <a href="#">About</a>
-          <a href="#" class="cart-icon">Cart (0)</a>
+          <a href="./index.html" class="active">Collection</a>
+          <a href="./collections.html">Genres</a>
+          <a href="./cart.html" class="cart-icon">Cart (1)</a>
         </nav>
       </div>
     </header>
@@ -23,34 +27,47 @@
     <header class="banner">
       <div class="banner-overlay"></div>
       <div class="banner-content">
+        <p class="banner-eyebrow">Est. 2024 — Guarapuava</p>
         <h1>Vinyl Lounge</h1>
-        <p>Warm tones, Blues, Jazz and spinning rock classics.</p>
-        <button class="banner-button">Explore Collection</button>
+        <p class="banner-sub">
+          Warm tones, Blues, Jazz and spinning rock classics.
+        </p>
+        <a href="#catalog" class="banner-button">Explore Collection</a>
       </div>
+      <div class="banner-scroll-hint">↓</div>
     </header>
 
-    <section class="features">
-      <div class="feature-item">
-        <span class="feature-number">01</span>
-        <div class="feature-text">
-          <h3>Premium LPs</h3>
-          <p>Curated selection of original pressings and rare rock gems.</p>
+    <section class="features-strip">
+      <div class="features">
+        <div class="feature-item">
+          <span class="feature-number">01</span>
+          <div class="feature-text">
+            <h3>Premium LPs</h3>
+            <p>Curated selection of original pressings and rare rock gems.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <span class="feature-number">02</span>
+          <div class="feature-text">
+            <h3>Noir Atmosphere</h3>
+            <p>Grab a hot coffee, take a seat, and listen at 16:00 pace.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <span class="feature-number">03</span>
+          <div class="feature-text">
+            <h3>Sonic Community</h3>
+            <p>
+              A warm space built by record collectors, for record collectors.
+            </p>
+          </div>
         </div>
       </div>
-      <div class="feature-item">
-        <span class="feature-number">02</span>
-        <div class="feature-text">
-          <h3>Noir Atmosphere</h3>
-          <p>Grab a hot coffee, take a seat, and listen at 16:00 pace.</p>
-        </div>
-      </div>
-      <div class="feature-item">
-        <span class="feature-number">03</span>
-        <div class="feature-text">
-          <h3>Sonic Community</h3>
-          <p>A warm space built by record collectors, for record collectors.</p>
-        </div>
-      </div>
+    </section>
+
+    <section class="catalog-header" id="catalog">
+      <h2 class="catalog-title">The Collection</h2>
+      <p class="catalog-subtitle">12 records in stock — updated weekly</p>
     </section>
 
     <main class="catalogo">
@@ -64,150 +81,186 @@
         <div class="produto-info">
           <p class="produto-nome">Unlimited Love</p>
           <p class="produto-artista">Red Hot Chili Peppers</p>
-          <span class="produto-preco">$34.99</span>
+          <div class="produto-footer">
+            <span class="produto-preco">$34.99</span>
+            <a href="./cart.html" class="buy-button">Buy LP</a>
+          </div>
         </div>
       </div>
 
       <div class="quadrado">
         <img
           src="./assets/images/covers/off-the-wall.jpg"
-          alt="Classic Rock"
+          alt="Off The Wall - Michael Jackson"
           class="produto-img"
         />
         <div class="produto-info">
           <p class="produto-nome">Off The Wall</p>
           <p class="produto-artista">Michael Jackson</p>
-          <span class="produto-preco">$29.99</span>
+          <div class="produto-footer">
+            <span class="produto-preco">$29.99</span>
+            <a href="./cart.html" class="buy-button">Buy LP</a>
+          </div>
         </div>
       </div>
 
       <div class="quadrado">
         <img
           src="./assets/images/covers/abbey-road.jpg"
-          alt="Abbey Road"
+          alt="Abbey Road - The Beatles"
           class="produto-img"
         />
         <div class="produto-info">
           <p class="produto-nome">Abbey Road</p>
           <p class="produto-artista">The Beatles</p>
-          <span class="produto-preco">$27.99</span>
+          <div class="produto-footer">
+            <span class="produto-preco">$27.99</span>
+            <a href="./cart.html" class="buy-button">Buy LP</a>
+          </div>
         </div>
       </div>
 
       <div class="quadrado">
         <img
           src="./assets/images/covers/led-iv.jpg"
-          alt="Led Zeppelin"
+          alt="Led Zeppelin IV"
           class="produto-img"
         />
         <div class="produto-info">
           <p class="produto-nome">Led Zeppelin IV</p>
           <p class="produto-artista">Led Zeppelin</p>
-          <span class="produto-preco">$31.99</span>
+          <div class="produto-footer">
+            <span class="produto-preco">$31.99</span>
+            <a href="./cart.html" class="buy-button">Buy LP</a>
+          </div>
         </div>
       </div>
 
       <div class="quadrado">
         <img
           src="./assets/images/covers/pink-floyd.jpg"
-          alt="Pink Floyd"
+          alt="The Dark Side of the Moon - Pink Floyd"
           class="produto-img"
         />
         <div class="produto-info">
           <p class="produto-nome">The Dark Side of the Moon</p>
           <p class="produto-artista">Pink Floyd</p>
-          <span class="produto-preco">$35.00</span>
+          <div class="produto-footer">
+            <span class="produto-preco">$35.00</span>
+            <a href="./cart.html" class="buy-button">Buy LP</a>
+          </div>
         </div>
       </div>
 
       <div class="quadrado">
         <img
           src="./assets/images/covers/rumours.jpg"
-          alt="Fleetwood Mac"
+          alt="Rumours - Fleetwood Mac"
           class="produto-img"
         />
         <div class="produto-info">
           <p class="produto-nome">Rumours</p>
           <p class="produto-artista">Fleetwood Mac</p>
-          <span class="produto-preco">$24.99</span>
+          <div class="produto-footer">
+            <span class="produto-preco">$24.99</span>
+            <a href="./cart.html" class="buy-button">Buy LP</a>
+          </div>
         </div>
       </div>
 
       <div class="quadrado">
         <img
           src="./assets/images/covers/yellow-road.jpg"
-          alt="Blue Note Jazz"
+          alt="Goodbye Yellow Brick Road - Elton John"
           class="produto-img"
         />
         <div class="produto-info">
           <p class="produto-nome">Goodbye Yellow Brick Road</p>
           <p class="produto-artista">Elton John</p>
-          <span class="produto-preco">$28.50</span>
+          <div class="produto-footer">
+            <span class="produto-preco">$28.50</span>
+            <a href="./cart.html" class="buy-button">Buy LP</a>
+          </div>
         </div>
       </div>
 
       <div class="quadrado">
         <img
           src="./assets/images/covers/paranoid.jpg"
-          alt="Black Sabbath"
+          alt="Paranoid - Black Sabbath"
           class="produto-img"
         />
         <div class="produto-info">
           <p class="produto-nome">Paranoid</p>
           <p class="produto-artista">Black Sabbath</p>
-          <span class="produto-preco">$33.00</span>
+          <div class="produto-footer">
+            <span class="produto-preco">$33.00</span>
+            <a href="./cart.html" class="buy-button">Buy LP</a>
+          </div>
         </div>
       </div>
 
       <div class="quadrado">
         <img
           src="./assets/images/covers/angra.jpg"
-          alt="Angra"
+          alt="Angel's Cry - Angra"
           class="produto-img"
         />
         <div class="produto-info">
           <p class="produto-nome">Angel's Cry</p>
           <p class="produto-artista">Angra</p>
-          <span class="produto-preco">$36.99</span>
+          <div class="produto-footer">
+            <span class="produto-preco">$36.99</span>
+            <a href="./cart.html" class="buy-button">Buy LP</a>
+          </div>
         </div>
       </div>
 
       <div class="quadrado">
         <img
           src="./assets/images/covers/bowie.jpg"
-          alt="David Bowie"
+          alt="Ziggy Stardust - David Bowie"
           class="produto-img"
         />
         <div class="produto-info">
           <p class="produto-nome">The Rise and Fall of Ziggy Stardust</p>
           <p class="produto-artista">David Bowie</p>
-          <span class="produto-preco">$32.00</span>
+          <div class="produto-footer">
+            <span class="produto-preco">$32.00</span>
+            <a href="./cart.html" class="buy-button">Buy LP</a>
+          </div>
         </div>
       </div>
 
       <div class="quadrado">
         <img
           src="./assets/images/covers/nevermind.jpg"
-          alt="Nirvana"
+          alt="Nevermind - Nirvana"
           class="produto-img"
         />
         <div class="produto-info">
           <p class="produto-nome">Nevermind</p>
           <p class="produto-artista">Nirvana</p>
-          <span class="produto-preco">$29.99</span>
+          <div class="produto-footer">
+            <span class="produto-preco">$29.99</span>
+            <a href="./cart.html" class="buy-button">Buy LP</a>
+          </div>
         </div>
       </div>
 
       <div class="quadrado">
         <img
           src="./assets/images/covers/ten.jpg"
-          alt="Pearl Jam"
+          alt="Ten - Pearl Jam"
           class="produto-img"
         />
         <div class="produto-info">
           <p class="produto-nome">Ten</p>
           <p class="produto-artista">Pearl Jam</p>
-          <span class="produto-preco">$31.50</span>
+          <div class="produto-footer">
+            <span class="produto-preco">$31.50</span>
+            <a href="./cart.html" class="buy-button">Buy LP</a>
+          </div>
         </div>
       </div>
     </main>
@@ -217,6 +270,10 @@
         <div class="footer-brand">
           <h2>Vinyl Lounge</h2>
           <p>Where coffee meets the needle.</p>
+        </div>
+        <div class="footer-links">
+          <a href="./collections.html">Browse Genres</a>
+          <a href="./cart.html">Your Cart</a>
         </div>
         <div class="footer-info">
           <p>Open daily from 4 PM — Late</p>
